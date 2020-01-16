@@ -1,0 +1,89 @@
+Nossa aplicação sera desenvolvida utilizando a IDE visual studio code
+
+Version Node.js
+Latest LTS Version: 12.14.1 (includes npm 6.13.4)
+
+Gerenciador de pacotes para controle de versões de pacotes baixado, link: 
+https://chocolatey.org/
+
+Install now canto superior direito do navegador
+Chocolatey 
+
+Efetuamos a instalação seguindo os passos da própria plataforma chocolatey
+
+Depois iremos instalar através do powershell o nosso gerenciador nodejs
+choco install nodejs-lts
+
+Com isso instalamos a versão do NodeJS como na primeira linha deste documento 
+
+Iremos utilizar o npm para instalação de pacotes para nossa ferramente e não de forma global 
+para nossa máquina.
+
+Temos um gerenciador de pacotes opcional 
+Instalamos yarn pelo chocolatey
+
+choco install yarn 
+
+Reiniciamos o terminal e colocamos yarn -v (1.21.1) para verificar a versão
+
+Inicio aplicaçao BACKEND
+-Regras de negócio
+-Conexao banc de dados 
+-Envio de e-mail -  cadastro, recuperaçao de senha,etc
+-Comunicação com webservices/comunicaçao com outros serviços. - Consulta cep, consulta frete, etc
+-Autenticaçao do usuario - detem as informaçoes do usuario e verifica se é valido
+-Criptografia e segurança.
+
+ESTRUTURA DE DADOS USADA PARA COMUNICAÇAO ENTRE FRONT E BACK É JSON
+Não é uma linguagem de programaçao
+Javascript Object Notation = JSON
+ 
+No diretorio yarn init -y pra iniciar projeto
+Vai criar um package.json
+
+yarn init -y - significa dizer que o projeto será projeto javascript
+
+package.json - armazena caracteristicas do projeto
+o mais importante que ele armazena 
+
+Instalamos a dependencia/biblioteca EXPRESS 4.17.1
+yarn add express
+
+Apos isso vemos que cria arquivo yarn.lock responsavel por guardar informaçoes sobre as versoes 
+dos pacotes que estao instalados no projeto - é praticamente um cache
+
+Criou node_modules - todos os pacotes e codigos desses pacotes
+Quando um pacote é instalado carrega com ele várias dependencias 
+Em node_modules >> express > package.json vemos as dependencias
+cada dependencia pode ter varias e assim por diante
+
+A biblioteca EXPRESS é responsável pela criação das rotas
+www.oministack.com/users - exemplo rota de usuario. Acessa a aplicação omnistack e Consome recurso usuários
+
+Instalamos uma extensao JSON Viewer no chrome para melhor visualização de json
+Instalamos a biblioteca yarn add nodemon -D = -D depencia de desenvolvimento - nao iremos usar depois que for para produçao, ou seja, online
+somente em quanto desenvolvemos a aplicação
+yarn add nodemon -D para observar as alteraçoes e atualizar no servidor - agora yarn nodemon index.js para executar
+
+agora yarn nodemon index.js para executar
+
+Em package.json criamos uma propriedade script para abreviar yarn add nodemon inde.js
+
+**PARAMETROS DENTRO DO EXPRESS**
+$$ Query Params: - 90% das vezes no get -
+Quando criamos uma busca de um site de alimentos por exemplo. Iremos passar seach como chave da rota e Sobremesas como comida a procurar VALUE
+informamos o VALOR da BUSCA
+
+
+$$ Route Params: No POST e DELETE - informamos especificamente qual queremos deletar ou atualizar
+http://localhost:3333/users/1 - delete por id
+
+// Body: Mais utilizado dentro do POST OU PUT. request.body - (Dados para criação ou alteração de um registro) - app.post('/users', (request, response)
+
+MONGODB /ATLAS - CRIAMOS CONTA E CRIAMOS UMA CLUSTER
+
+1- Em database access criamos omnistack com senha miguelbatista
+2 -Em Network Access - Allow access anywhere
+
+43:10
+
