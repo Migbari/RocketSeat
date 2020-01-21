@@ -3,7 +3,16 @@ const axios = require('axios');
 // Importa model dev.js 
 const Dev = require('../models/Dev');
 
+const parseStringAsArray = require('../uteis/parseStringAsArray');
+
+// Funçoes controller -- index(mostrar), show(mostrar-especifico), store(criar), update(atualizar), destroy(deletar) 
+
 module.exports = {
+    async index(request, response) {
+        const devs = await Dev.find();
+
+        return response.json(devs);
+    },
     async store(request, response) {
         // Desestruturação de github_username pela request boby - corpo da requisição
         const { github_username, techs, latitude, longitude } = request.body;
@@ -20,7 +29,7 @@ module.exports = {
             // console.log(name, avatar_url, bio, github_username);
 
             // Indica proximo item com split(','), percorre techs com map e .trim() remove espaços 
-            const techsArray = techs.split(',').map(techs => techs.trim());
+            const techsArray = parseStringAsArray(techs);
 
             const location = {
                 type: 'Point',

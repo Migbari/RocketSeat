@@ -7,7 +7,8 @@ const app = express();
 
 mongoose.connect('mongodb+srv://omnistack:miguelbatista@cluster0-w3uk9.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex :  true ,
 });
 // Para que o express entenda requisições no formato JSON - sempre antes das rotas 
 app.use(express.json()); 
