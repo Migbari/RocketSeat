@@ -1,2 +1,2 @@
-# RocketSeat
-Códigos desenvolvidos na semana OmniStack 10.0
+# OmniStack NodeJs
+Códigos desenvolvidos durante a semana OmniStack
