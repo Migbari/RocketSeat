@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://omnistack:miguelbatista@cluster0-w3uk9.mongodb.n
     useUnifiedTopology: true,
     useCreateIndex :  true ,
 });
-app.use(cors({ origin: 'http:localhost:3000' }))
+app.use(cors());
 // Para que o express entenda requisições no formato JSON - sempre antes das rotas 
 app.use(express.json()); 
 app.use(routes); 
